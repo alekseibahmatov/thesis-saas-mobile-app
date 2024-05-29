@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.thesis_saas_mobile_app"
-        minSdk = 24
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -28,6 +28,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -50,14 +53,20 @@ android {
 }
 
 dependencies {
-    implementation ("io.socket:socket.io-client:2.0.0") {
+    implementation ("io.socket:socket.io-client:2.1.0") {
         exclude("org.json", "json")
     }
+    implementation("io.github.nefilim.kjwt:kjwt-core:0.9.0")
+    implementation("com.auth0:java-jwt:3.18.1")
+
+    implementation(libs.google.webrtc)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.jjwt.api)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.material)
     runtimeOnly(libs.jjwt.impl)
     runtimeOnly(libs.jjwt.jackson)
     implementation(libs.androidx.core.ktx)

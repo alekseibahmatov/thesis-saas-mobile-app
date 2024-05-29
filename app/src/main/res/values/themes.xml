@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Thesissaasmobileapp" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.AppTheme" parent="Theme.AppCompat" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
